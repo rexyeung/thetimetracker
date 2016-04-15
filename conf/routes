@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Contact page
+GET     /contact                    controllers.Application.contact()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# The webjars-play helper library has a wrapper around the Play Static Asset Controller that can locate and serve WebJar
+# assets. A new route to WebJarAssets needs to be added to the conf/routes file:
+GET     /webjars/*file              controllers.WebJarAssets.at(file)
